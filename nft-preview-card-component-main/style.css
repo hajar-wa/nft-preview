@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "outfit";
+    color: white;
+}
+.outside-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid blue;
+    background-color: hsl(217, 54%, 11%);
+    padding: 0 20px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    /* border: 3px solid orange; */
+    padding: 1.5rem 0;
+    background-color: hsl(216, 50%, 16%);
+    max-width: 375px;
+    min-width: 375px;
+    border-radius: 20px;
+}
+main, footer{
+    width: 85%;
+    margin: auto;
+}
+
+.img {
+    height: 320px;
+    width: 85%;
+    background-image: url('./images/image-equilibrium.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    margin: auto;
+    position: relative;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+    background-color: hsla(178, 100%, 50%, .4);
+
+}
+
+.img::after {
+    content: url('./images/icon-view.svg');
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.img:hover {
+    opacity: 1; /* Change opacity of the image on hover */
+    cursor: pointer;
+}
+
+.img:hover::before,
+.img:hover::after {
+    opacity: 1;
+}
+
+.main-header{
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 1.2;
+    margin: 1rem 0 1rem;
+}
+.main-header:hover, .name:hover{
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+.main-para{
+    font-size: 1.2rem;
+    color: hsla(215, 51%, 70%, .8);
+    margin: 0 0 1.3rem;
+    line-height: 1.5;
+}
+.list{
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid hsla(215, 51%, 70%, .3);
+    padding-bottom: 1.7rem ;
+    margin: 0 0 1rem;
+}
+
+.value{
+    color: hsl(178, 100%, 50%);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.time, .color{
+    color: hsla(215, 51%, 70%, .8);
+}
+li{
+    display: flex;
+    gap: 10px;
+}
+
+.avatar{
+    width: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
